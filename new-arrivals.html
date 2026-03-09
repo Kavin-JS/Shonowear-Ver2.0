@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShonoWear — Anime Merch</title>
+  <title>New Arrivals - ShonoWear</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous"/>
   <link rel="stylesheet" href="style.css">
@@ -48,74 +48,22 @@
     <a id="mob-logout" style="display:none;" onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</a>
   </div>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-content">
-      <div class="hero-pill"><span></span> NEW COLLECTION</div>
-      <h1 class="hero-title"><span class="line1">PREMIUM</span><span class="line2">ANIME MERCH</span></h1>
-      <p class="hero-jp">世界最高の品質 — 最高のスタイル</p>
-      <div class="hero-btns">
-        <a href="collection.html" class="btn-r">SHOP NOW</a>
-        <button class="btn-o">WATCH TRAILER</button>
+  <!-- NEW ARRIVALS PAGE -->
+  <div class="pw">
+    <section class="prd-sec">
+      <div class="sh">
+        <span class="sh-tag">— LATEST</span>
+        <h2 class="sh-title">NEW ARRIVALS</h2>
+        <div class="sh-line"></div>
       </div>
-    </div>
-    <div class="hero-scroll">SCROLL<i class="fas fa-chevron-down"></i></div>
-  </section>
 
-  <!-- SCROLLING STRIP -->
-  <div class="strip">
-    <div class="strip-track">
-      <div class="strip-item">ANIME FIGURES <span>★</span></div>
-      <div class="strip-item">EXCLUSIVE APPAREL <span>★</span></div>
-      <div class="strip-item">COLLECTIBLES <span>★</span></div>
-      <div class="strip-item">LIMITED EDITION <span>★</span></div>
-      <div class="strip-item">ANIME FIGURES <span>★</span></div>
-      <div class="strip-item">EXCLUSIVE APPAREL <span>★</span></div>
-    </div>
+      <p style="color:var(--muted);margin-bottom:30px;text-align:center;">Discover our latest and most exclusive anime merchandise. Fresh stock every week!</p>
+
+      <!-- PRODUCTS GRID -->
+      <div class="prd-grid" id="new-products-grid"></div>
+      <div class="no-res" id="no-res"><i class="fas fa-inbox"></i>No new products found</div>
+    </section>
   </div>
-
-  <!-- SERVICES SECTION -->
-  <section class="services">
-    <div class="svc-grid">
-      <div class="svc-card">
-        <i class="fas fa-shipping-fast svc-icon"></i>
-        <h4>FAST SHIPPING</h4>
-        <p>Worldwide delivery in 3-7 days with tracking</p>
-        <div class="svc-num">01</div>
-      </div>
-      <div class="svc-card">
-        <i class="fas fa-award svc-icon"></i>
-        <h4>PREMIUM QUALITY</h4>
-        <p>100% authentic anime merchandise guaranteed</p>
-        <div class="svc-num">02</div>
-      </div>
-      <div class="svc-card">
-        <i class="fas fa-lock svc-icon"></i>
-        <h4>SECURE PAYMENT</h4>
-        <p>SSL encrypted transactions, multiple payment options</p>
-        <div class="svc-num">03</div>
-      </div>
-      <div class="svc-card">
-        <i class="fas fa-headset svc-icon"></i>
-        <h4>24/7 SUPPORT</h4>
-        <p>Dedicated customer service team always ready</p>
-        <div class="svc-num">04</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED SECTION -->
-  <section class="prd-sec">
-    <div class="sh">
-      <span class="sh-tag">— FEATURED</span>
-      <h2 class="sh-title">TRENDING NOW</h2>
-      <div class="sh-line"></div>
-    </div>
-    <div class="prd-grid" id="featured-products"></div>
-  </section>
 
   <!-- TOAST & POPUP -->
   <div id="toast" class="toast"></div>
@@ -132,5 +80,6 @@
 
   <script src="data.js"></script>
   <script src="main.js"></script>
+  <script src="new-arrivals.js"></script>
 </body>
 </html>
