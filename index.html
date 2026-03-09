@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShonoWear — Anime Merch</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-logo" onclick="go('home')">SHONO<span>WEAR</span></div>
+            <ul class="nav-links">
+                <li><a onclick="go('collection')">Collection</a></li>
+                <li><a onclick="go('about')">About</a></li>
+                <li><a onclick="go('contact')">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <div class="cart-wrap">
+                <a class="nav-links icon-link" onclick="go('cart')"><i class="fas fa-shopping-bag"></i></a>
+                <div class="cart-badge">0</div>
+            </div>
+            <a id="nav-login" class="nav-links" onclick="go('login')"><i class="fas fa-user"></i></a>
+            <div id="nav-user" class="nav-user" style="display:none;">
+                <span class="nav-uname" id="nav-uname"></span>
+                <button class="nav-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+        <button class="nav-toggle" id="nav-toggle"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mob-overlay" id="mob-ov" onclick="closeMob()"></div>
+    <div class="mob-menu" id="mob-menu">
+        <div class="mob-logo">SHONO<span style="color:#e8153a;">WEAR</span></div>
+        <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
+        <a onclick="go('collection')"><i class="fas fa-shopping-bag"></i>Collection</a>
+        <a onclick="go('about')"><i class="fas fa-info-circle"></i>About</a>
+        <a onclick="go('contact')"><i class="fas fa-envelope"></i>Contact</a>
+        <a id="mob-login" onclick="go('login')"><i class="fas fa-user"></i>Sign In</a>
+        <a id="mob-logout" style="display:none;" onclick="logout()"><i class="fas fa-sign-out-alt"></i>Logout</a>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-grid"></div>
+            <div class="hero-glow"></div>
+            <div class="hero-content">
+                <div class="hero-pill"><span></span> NEW COLLECTION</div>
+                <h1 class="hero-title"><span class="line1">PREMIUM</span><span class="line2">ANIME MERCH</span></h1>
+                <p class="hero-jp">世界最高の品質 — 最高のスタイル</p>
+                <div class="hero-btns">
+                    <button class="btn-r" onclick="go('collection')">SHOP NOW</button>
+                    <button class="btn-o">WATCH TRAILER</button>
+                </div>
+            </div>
+            <div class="hero-scroll">SCROLL<i class="fas fa-chevron-down"></i></div>
+        </section>
+
+        <div class="strip">
+            <div class="strip-track">
+                <div class="strip-item">ANIME FIGURES <span>★</span></div>
+                <div class="strip-item">EXCLUSIVE APPAREL <span>★</span></div>
+                <div class="strip-item">COLLECTIBLES <span>★</span></div>
+                <div class="strip-item">LIMITED EDITION <span>★</span></div>
+                <div class="strip-item">ANIME FIGURES <span>★</span></div>
+                <div class="strip-item">EXCLUSIVE APPAREL <span>★</span></div>
+            </div>
+        </div>
+
+        <section class="services">
+            <div class="svc-grid">
+                <div class="svc-card">
+                    <i class="fas fa-shipping-fast svc-icon"></i>
+                    <h4>FAST SHIPPING</h4>
+                    <p>Worldwide delivery in 3-7 days with tracking</p>
+                    <div class="svc-num">01</div>
+                </div>
+                <div class="svc-card">
+                    <i class="fas fa-award svc-icon"></i>
+                    <h4>PREMIUM QUALITY</h4>
+                    <p>100% authentic anime merchandise guaranteed</p>
+                    <div class="svc-num">02</div>
+                </div>
+                <div class="svc-card">
+                    <i class="fas fa-lock svc-icon"></i>
+                    <h4>SECURE PAYMENT</h4>
+                    <p>SSL encrypted transactions, multiple payment options</p>
+                    <div class="svc-num">03</div>
+                </div>
+                <div class="svc-card">
+                    <i class="fas fa-headset svc-icon"></i>
+                    <h4>24/7 SUPPORT</h4>
+                    <p>Dedicated customer service team always ready</p>
+                    <div class="svc-num">04</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="prd-sec">
+            <div class="sh">
+                <span class="sh-tag">— FEATURED</span>
+                <h2 class="sh-title">TRENDING NOW</h2>
+                <div class="sh-line"></div>
+            </div>
+            <div class="prd-grid" id="home-products"></div>
+        </section>
+    </div>
+
+    <!-- COLLECTION PAGE -->
+    <div id="collection" class="page">
+        <div class="pw">
+            <section class="prd-sec">
+                <div class="sh">
+                    <span class="sh-tag">— COLLECTION</span>
+                    <h2 class="sh-title">ALL PRODUCTS</h2>
+                    <div class="sh-line"></div>
+                </div>
+                <div class="search-wrap">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search products..." id="search-input">
+                        <button onclick="searchProducts()"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="prd-grid" id="col-products"></div>
+                <div class="no-res" id="col-no-res"><i class="fas fa-inbox"></i>No products found</div>
+            </section>
+        </div>
+    </div>
+
+    <!-- PRODUCT DETAIL PAGE -->
+    <div id="product-detail" class="page">
+        <div class="pw">
+            <div class="det-page" id="detail-content"></div>
+        </div>
+    </div>
+
+    <!-- CART PAGE -->
+    <div id="cart" class="page">
+        <div class="pw">
+            <div class="det-page">
+                <h2 style="margin-bottom:36px;font-family:var(--font-d);font-size:2.5rem;letter-spacing:3px;">YOUR CART
+                </h2>
+                <div id="cart-items" style="margin-bottom:28px;"></div>
+                <div id="cart-total"
+                    style="display:none;padding:16px;background:var(--surface);border:1px solid var(--border);margin-bottom:20px;">
+                    <div style="display:flex;justify-content:space-between;margin-bottom:14px;">
+                        <span>Subtotal:</span>
+                        <span id="subtotal-amt">Rs. 0</span>
+                    </div>
+                    <div
+                        style="display:flex;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border);">
+                        <span style="font-weight:700;">TOTAL:</span>
+                        <span style="font-weight:700;color:var(--gold);" id="total-amt">Rs. 0</span>
+                    </div>
+                </div>
+                <button class="btn-r" id="co-btn" onclick="doPayment()" style="display:none;">CHECKOUT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN PAGE -->
+    <div id="login" class="page">
+        <div class="pw" style="display:flex;align-items:center;justify-content:center;">
+            <div style="max-width:400px;width:100%;padding:40px;">
+                <h2 style="text-align:center;margin-bottom:28px;font-family:var(--font-d);font-size:1.8rem;">SIGN IN
+                </h2>
+                <input type="text" id="l-user" placeholder="Username"
+                    style="width:100%;padding:13px;background:var(--surface);border:1px solid var(--border);color:var(--white);margin-bottom:14px;font-family:var(--font-b);">
+                <input type="password" id="l-pass" placeholder="Password"
+                    style="width:100%;padding:13px;background:var(--surface);border:1px solid var(--border);color:var(--white);margin-bottom:20px;font-family:var(--font-b);">
+                <button class="btn-r" onclick="doLogin()" style="width:100%;margin-bottom:14px;">LOGIN</button>
+                <p style="text-align:center;color:var(--muted);font-size:12px;">No account? <a onclick="go('signup')"
+                        style="color:var(--gold);cursor:pointer;text-decoration:underline;">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIGNUP PAGE -->
+    <div id="signup" class="page">
+        <div class="pw" style="display:flex;align-items:center;justify-content:center;">
+            <div style="max-width:400px;width:100%;padding:40px;">
+                <h2 style="text-align:center;margin-bottom:28px;font-family:var(--font-d);font-size:1.8rem;">CREATE
+                    ACCOUNT</h2>
+                <input type="text" id="s-user" placeholder="Username"
+                    style="width:100%;padding:13px;background:var(--surface);border:1px solid var(--border);color:var(--white);margin-bottom:14px;font-family:var(--font-b);">
+                <input type="email" id="s-email" placeholder="Email"
+                    style="width:100%;padding:13px;background:var(--surface);border:1px solid var(--border);color:var(--white);margin-bottom:14px;font-family:var(--font-b);">
+                <input type="password" id="s-pass" placeholder="Password"
+                    style="width:100%;padding:13px;background:var(--surface);border:1px solid var(--border);color:var(--white);margin-bottom:20px;font-family:var(--font-b);">
+                <button class="btn-r" onclick="doSignup()" style="width:100%;margin-bottom:14px;">SIGN UP</button>
+                <p style="text-align:center;color:var(--muted);font-size:12px;">Already have an account? <a
+                        onclick="go('login')" style="color:var(--gold);cursor:pointer;text-decoration:underline;">Sign
+                        in</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <div class="pw">
+            <section class="prd-sec">
+                <div class="sh">
+                    <span class="sh-tag">— ABOUT</span>
+                    <h2 class="sh-title">OUR STORY</h2>
+                    <div class="sh-line"></div>
+                </div>
+                <p style="color:var(--muted);line-height:1.8;margin-bottom:20px;">ShonoWear is your premium destination
+                    for authentic anime merchandise. Founded in 2024, we bring the best anime products from around the
+                    world directly to your doorstep.</p>
+                <p style="color:var(--muted);line-height:1.8;">Quality, authenticity, and customer satisfaction are our
+                    core values. Every product is carefully curated to ensure you get the best anime merchandise
+                    experience.</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <div class="pw">
+            <section class="prd-sec">
+                <div class="sh">
+                    <span class="sh-tag">— CONTACT</span>
+                    <h2 class="sh-title">GET IN TOUCH</h2>
+                    <div class="sh-line"></div>
+                </div>
+                <div style="max-width:500px;">
+                    <input type="text" id="ct-name" placeholder="Your Name"
+                        style="width:100%;padding:13px;background:var(--surface);border:1px solid var(--border);color:var(--white);margin-bottom:14px;font-family:var(--font-b);">
+                    <input type="email" id="ct-email" placeholder="Your Email"
+                        style="width:100%;padding:13px;background:var(--surface);border:1px solid var(--border);color:var(--white);margin-bottom:14px;font-family:var(--font-b);">
+                    <textarea id="ct-msg" placeholder="Message"
+                        style="width:100%;padding:13px;background:var(--surface);border:1px solid var(--border);color:var(--white);margin-bottom:20px;font-family:var(--font-b);resize:vertical;min-height:120px;"></textarea>
+                    <button class="btn-r" onclick="submitMsg()">SEND MESSAGE</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast"></div>
+
+    <!-- POPUP -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePop()"><i class="fas fa-times"></i></button>
+            <div style="text-align:center;padding:40px;">
+                <div id="pop-ico" style="font-size:3rem;margin-bottom:20px;"></div>
+                <h2 id="pop-title" style="font-family:var(--font-d);font-size:1.8rem;margin-bottom:14px;"></h2>
+                <p id="pop-msg" style="color:var(--muted);"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

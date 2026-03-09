@@ -1,0 +1,104 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Elite Hoodie",
+            "price": 3999,
+            "img": "🎌",
+            "category": "apparel",
+            "hasSizes": true,
+            "isNew": true,
+            "description": "Premium anime hoodie with exclusive design"
+        },
+        {
+            "id": 2,
+            "name": "Manga T-Shirt",
+            "price": 1499,
+            "img": "👕",
+            "category": "apparel",
+            "hasSizes": true,
+            "isNew": false,
+            "description": "Classic manga-inspired t-shirt"
+        },
+        {
+            "id": 3,
+            "name": "Hero Figure",
+            "price": 4999,
+            "img": "🗿",
+            "category": "figures",
+            "hasSizes": false,
+            "isNew": true,
+            "description": "Collectible hero figure"
+        },
+        {
+            "id": 4,
+            "name": "Dragon Poster",
+            "price": 899,
+            "img": "📜",
+            "category": "posters",
+            "hasSizes": false,
+            "isNew": false,
+            "description": "High-quality dragon anime poster"
+        },
+        {
+            "id": 5,
+            "name": "Cap - Anime",
+            "price": 1299,
+            "img": "🧢",
+            "category": "apparel",
+            "hasSizes": true,
+            "isNew": false,
+            "description": "Stylish anime cap"
+        },
+        {
+            "id": 6,
+            "name": "Mystery Box",
+            "price": 5999,
+            "img": "🎁",
+            "category": "boxes",
+            "hasSizes": false,
+            "isNew": true,
+            "description": "Surprise mystery box with random anime goodies"
+        },
+        {
+            "id": 7,
+            "name": "Battle Jacket",
+            "price": 5499,
+            "img": "🧥",
+            "category": "apparel",
+            "hasSizes": true,
+            "isNew": false,
+            "description": "Premium anime-inspired battle jacket"
+        },
+        {
+            "id": 8,
+            "name": "Legend Statue",
+            "price": 7999,
+            "img": "🗽",
+            "category": "figures",
+            "hasSizes": false,
+            "isNew": false,
+            "description": "Impressive legend statue"
+        },
+        {
+            "id": 9,
+            "name": "Art Book Vol 1",
+            "price": 1899,
+            "img": "📖",
+            "category": "books",
+            "hasSizes": false,
+            "isNew": false,
+            "description": "Official anime art book volume 1"
+        },
+        {
+            "id": 10,
+            "name": "Neon Sign",
+            "price": 3499,
+            "img": "✨",
+            "category": "decor",
+            "hasSizes": false,
+            "isNew": true,
+            "description": "Anime neon sign for room decoration"
+        }
+    ]
+}
